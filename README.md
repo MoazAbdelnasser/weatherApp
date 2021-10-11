@@ -1,10 +1,18 @@
 # Weather-Journal App Project
 
 ## Overview
-This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+This Project requires to install [express - body-parser - cors]. 
 
 ## Instructions
-This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
-
+install project using commands below
+npm i
+node .\server.js
 ## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+you can use the following Zips to test the website
+55435
+
+    ##Output will be :
+        Date Now : 10 - 11 - 2021
+        Temperature in Fehenhid : 286.65
+        Temperature in Celisuis : 141.4722222222222
+        You Feels :
