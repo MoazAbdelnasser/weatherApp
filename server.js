@@ -16,21 +16,25 @@ app.use(bodyParser.json());
 /* Middleware*/
 const cors = require('cors');
 app.use(cors());
-app.use(express.static("website"));
 //Now let's create our Server port
 let port = 8000;
+let localServer = `http://localhost:${port}/`;
 // Initialize the main project folder
 const server = app.listen(port,()=>{
     console.log(`Server is running on localhost:${port}`);
-});
-// Initialize all route with a callback function
-// Callback function to complete GET '/all'
-app.get('/all',(req,res)=>{
-    res.send(projectData);
+    //console.log(projectData);
 });
 
-// Post Route
-app.post('/all',callBack);
-function callBack(request , response){
-      res.send(projectData);
-  }
+app.use(express.static("website"));
+// Initialize all route with a callback function
+// Callback function to complete GET '/all'
+
+// Post Route : Used to store the data that comes from the front-end Code
+app.post("/channel",function(request , response){
+    projectData = request.body;
+    //console.log("Data inside Local Server : ",projectData);
+});
+//Now let's Get data and send it to the Channel
+app.get("/channel",function(req,res){
+    res.send(projectData);
+});
